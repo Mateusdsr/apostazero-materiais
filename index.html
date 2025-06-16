@@ -5,72 +5,92 @@
     <title>Materiais Educativos | Aposta Zero</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        body { background: #F5F5F5; font-family: Arial, sans-serif; margin: 0; }
+        :root {
+            --azul: #4F46E5;
+            --cinza-bg: #181927;
+            --cinza-card: #23243a;
+            --cinza-texto: #e2e2e5;
+            --cinza-sub: #b1b2c6;
+        }
+        body {
+            background: var(--cinza-bg);
+            font-family: 'Inter', Arial, sans-serif;
+            margin: 0;
+            color: var(--cinza-texto);
+            letter-spacing: 0.02em;
+        }
         header {
-            background: #4F46E5;
+            background: var(--azul);
             color: white;
-            padding: 32px 0 16px 0;
+            padding: 32px 0 20px 0;
             text-align: center;
-            border-radius: 0 0 24px 24px;
-            box-shadow: 0 6px 36px #4f46e522;
+            border-radius: 0 0 32px 32px;
+            box-shadow: 0 8px 38px #0003;
         }
         .logo {
-            width: 120px;
-            margin-bottom: 10px;
-            filter: drop-shadow(0 4px 16px #2222);
+            width: 108px;
+            margin-bottom: 16px;
             background: #fff;
-            border-radius: 40px;
-            padding: 8px;
+            border-radius: 32px;
+            padding: 7px;
+            box-shadow: 0 4px 24px #18192722;
         }
         .apk-btn {
             display: inline-block;
-            padding: 16px 38px;
-            background: #4F46E5;
-            color: #fff;
-            border-radius: 20px;
-            font-size: 20px;
+            padding: 15px 34px;
+            background: var(--cinza-card);
+            color: var(--azul);
+            border-radius: 18px;
+            font-size: 19px;
             font-weight: 600;
             text-decoration: none;
-            margin: 32px 0 18px 0;
-            box-shadow: 0 4px 18px #4F46E522;
-            transition: 0.2s;
+            margin: 30px 0 0 0;
+            box-shadow: 0 4px 22px #0004;
+            transition: 0.16s;
+            border: 2px solid var(--azul);
         }
-        .apk-btn:hover { background: #312e81; color: #e0e7ff; }
+        .apk-btn:hover {
+            background: var(--azul);
+            color: #fff;
+            border: 2px solid #fff;
+        }
         main {
-            max-width: 650px;
-            margin: 50px auto 0 auto;
-            background: white;
-            border-radius: 18px;
-            box-shadow: 0 2px 24px #4f46e515;
-            padding: 32px 28px 24px 28px;
+            max-width: 600px;
+            margin: 42px auto 0 auto;
+            background: var(--cinza-card);
+            border-radius: 20px;
+            box-shadow: 0 2px 32px #0002;
+            padding: 32px 26px 22px 26px;
         }
-        h1 { font-weight: 900; font-size: 2.2rem; margin: 0 0 4px 0; }
-        h2 { font-weight: bold; margin-bottom: 8px; color: #4F46E5; }
+        h1 { font-weight: 900; font-size: 2.1rem; margin: 0 0 8px 0; }
+        h2 { font-weight: bold; margin-bottom: 10px; color: var(--azul); }
+        p, li, a { font-size: 1.07rem; }
         article {
-            margin-bottom: 38px;
-            border-bottom: 1px solid #f0f0f0;
-            padding-bottom: 24px;
+            margin-bottom: 32px;
+            border-bottom: 1px solid #242646;
+            padding-bottom: 23px;
         }
         article:last-child { border-bottom: none; }
-        ul { padding-left: 21px; }
-        a { color: #4F46E5; text-decoration: underline; }
+        ul { padding-left: 18px; }
+        a { color: var(--azul); text-decoration: underline; }
+        a:visited { color: #8b7bff; }
         footer {
             text-align: center;
-            color: #aaa;
-            margin: 34px 0 16px 0;
+            color: #767b9c;
+            margin: 38px 0 16px 0;
             font-size: 15px;
         }
         @media (max-width: 700px) {
-            main { padding: 20px 8px 16px 8px; }
-            .logo { width: 80px; }
+            main { padding: 18px 3vw 12px 3vw; }
+            .logo { width: 70px; }
         }
     </style>
 </head>
 <body>
     <header>
         <img src="logo.png" alt="Logo Aposta Zero" class="logo">
-        <h1>Aposta Zero Educa</h1>
-        <p style="font-size:19px;font-weight:normal;margin-top:-6px;">
+        <h1 style="margin-bottom:2px;">Aposta Zero Educa</h1>
+        <p style="font-size:18px;font-weight:400;margin-top:3px;margin-bottom:20px;">
             Conteúdos para quem quer parar de apostar
         </p>
         <a href="app-debug.apk" download class="apk-btn">&#128190; Baixar o App (APK)</a>
