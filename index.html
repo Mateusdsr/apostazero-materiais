@@ -2,148 +2,568 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aposta Zero | Materiais Educativos</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        :root {
-            --roxo: #4F46E5;
-            --preto: #111215;
-            --cinza-escuro: #22242b;
-            --cinza-claro: #f4f4f4;
-            --cinza-texto: #e5e6eb;
-            --cinza-card: #181920;
-            --cinza-sec: #a6a9b2;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        html, body { margin: 0; padding: 0; background: var(--preto); }
+
         body {
-            font-family: 'Inter', Arial, sans-serif;
-            color: var(--cinza-texto);
-            background: var(--preto);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #e2e8f0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
             min-height: 100vh;
         }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header */
         header {
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 0;
             text-align: center;
-            padding: 44px 0 18px 0;
-            border-bottom: 1.5px solid #181a23;
-            background: var(--preto);
         }
-        .logo {
-            width: 112px;
-            margin-bottom: 16px;
-            background: #fff;
-            border-radius: 30px;
-            padding: 8px;
-            box-shadow: 0 2px 18px #2223;
+
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.2) 0%, rgba(147, 51, 234, 0.2) 100%);
         }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-container {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 5rem;
+            height: 5rem;
+            background: linear-gradient(135deg, #6366f1 0%, #9333ea 100%);
+            border-radius: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.25);
+        }
+
+        .logo-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            fill: white;
+        }
+
         h1 {
-            font-size: 2.15rem;
-            font-weight: 900;
-            color: #fff;
-            letter-spacing: -1px;
-            margin: 7px 0 4px 0;
-        }
-        .subtitle {
-            color: var(--cinza-sec);
-            font-size: 1.09rem;
-            font-weight: 500;
-            margin-bottom: 9px;
-        }
-        .apk-btn {
-            display: inline-block;
-            padding: 14px 36px;
-            background: var(--preto);
-            color: #fff;
-            border-radius: 13px;
-            font-size: 18px;
-            font-weight: 600;
-            text-decoration: none;
-            margin: 26px 0 0 0;
-            border: 2px solid var(--roxo);
-            transition: all 0.2s;
-            box-shadow: 0 2px 16px #0008;
-        }
-        .apk-btn:hover {
-            background: var(--cinza-card);
-            color: var(--roxo);
-            border: 2px solid var(--roxo);
-            box-shadow: 0 2px 20px #4F46E52a;
-        }
-        main {
-            max-width: 600px;
-            margin: 48px auto 0 auto;
-            background: var(--cinza-card);
-            border-radius: 17px;
-            box-shadow: 0 2px 32px #0004;
-            padding: 34px 26px 20px 26px;
-        }
-        h2 {
-            color: #fff;
-            font-size: 1.2rem;
+            font-size: 3rem;
             font-weight: 700;
-            margin: 0 0 9px 0;
-            letter-spacing: -0.5px;
+            color: white;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
         }
-        p, li, a { font-size: 1.09rem; }
-        article {
-            margin-bottom: 29px;
-            border-bottom: 1px solid #23242b;
-            padding-bottom: 21px;
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+            font-weight: 500;
+            max-width: 32rem;
+            margin: 0 auto 2rem;
+            line-height: 1.75;
         }
-        article:last-child { border-bottom: none; }
-        ul { padding-left: 19px; }
-        a { color: var(--roxo); text-decoration: underline; }
-        a:visited { color: #a09fff; }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: linear-gradient(90deg, #6366f1 0%, #9333ea 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px -3px rgba(99, 102, 241, 0.25);
+            transform: translateY(0);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 20px 40px -6px rgba(99, 102, 241, 0.4);
+            background: linear-gradient(90deg, #5855eb 0%, #8b2fc7 100%);
+        }
+
+        .download-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            fill: currentColor;
+        }
+
+        /* Main Content */
+        main {
+            padding: 4rem 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .content-column {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .card {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(12px);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid rgba(51, 65, 85, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: rgba(100, 116, 139, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-icon svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            fill: white;
+        }
+
+        .icon-amber {
+            background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+        }
+
+        .icon-emerald {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .icon-blue {
+            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+        }
+
+        .icon-yellow {
+            background: linear-gradient(135deg, #eab308 0%, #f97316 100%);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .card-text {
+            font-size: 1.125rem;
+            color: #cbd5e1;
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #818cf8;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .card-link:hover {
+            color: #a5b4fc;
+        }
+
+        .card-link svg {
+            width: 1rem;
+            height: 1rem;
+            fill: currentColor;
+        }
+
+        /* Tips List */
+        .tips-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .tips-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            color: #cbd5e1;
+        }
+
+        .tip-bullet {
+            width: 0.5rem;
+            height: 0.5rem;
+            background: #10b981;
+            border-radius: 50%;
+            margin-top: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        /* Links Section */
+        .links-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: rgba(51, 65, 85, 0.5);
+            border-radius: 0.75rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            group: true;
+        }
+
+        .link-item:hover {
+            background: rgba(51, 65, 85, 0.8);
+        }
+
+        .link-icon {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .link-icon svg {
+            width: 1rem;
+            height: 1rem;
+            fill: white;
+        }
+
+        .icon-users {
+            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+        }
+
+        .icon-heart {
+            background: linear-gradient(135deg, #ef4444 0%, #ec4899 100%);
+        }
+
+        .link-content {
+            flex: 1;
+        }
+
+        .link-title {
+            color: #e2e8f0;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .link-description {
+            color: #94a3b8;
+            font-size: 0.875rem;
+        }
+
+        .external-icon {
+            width: 1rem;
+            height: 1rem;
+            fill: #94a3b8;
+            transition: fill 0.3s ease;
+        }
+
+        .link-item:hover .external-icon {
+            fill: #cbd5e1;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .testimonial {
+            background: rgba(51, 65, 85, 0.3);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border-left: 4px solid #6366f1;
+        }
+
+        .testimonial:nth-child(2) {
+            border-left-color: #9333ea;
+        }
+
+        .testimonial-text {
+            color: #cbd5e1;
+            font-size: 1.125rem;
+            font-style: italic;
+            line-height: 1.75;
+        }
+
+        /* Footer */
         footer {
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(51, 65, 85, 0.5);
+            padding: 2rem 0;
             text-align: center;
-            color: var(--cinza-sec);
-            margin: 46px 0 16px 0;
-            font-size: 15px;
         }
-        @media (max-width: 700px) {
-            main { padding: 15px 4vw 12px 4vw; }
-            .logo { width: 68px; }
+
+        .footer-text {
+            color: #94a3b8;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.125rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .card-title {
+                font-size: 1.25rem;
+            }
+
+            .card-text {
+                font-size: 1rem;
+            }
+
+            .tips-list li {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <img src="logo.png" alt="Logo Aposta Zero" class="logo">
-        <h1>Aposta Zero</h1>
-        <div class="subtitle">Conteúdos para quem quer parar de apostar</div>
-        <a href="app-debug.apk" download class="apk-btn">&#128190; Baixar o App (APK)</a>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                    </svg>
+                </div>
+                <h1>Aposta Zero</h1>
+                <p class="subtitle">
+                    Conteúdos educativos para quem quer retomar o controle da vida
+                </p>
+                <a href="#" class="download-btn">
+                    <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7,10 12,15 17,10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    Baixar o App
+                </a>
+            </div>
+        </div>
     </header>
+
+    <!-- Main Content -->
     <main>
-        <article>
-            <h2>O que é o vício em apostas?</h2>
-            <p>O vício em apostas é um transtorno sério, reconhecido pela OMS, que afeta milhões de pessoas no Brasil. Reconhecer o problema é o primeiro passo para a mudança.</p>
-            <a href="https://g1.globo.com/saude/saude-mental/noticia/2024/07/16/ludopatia-entenda-o-que-e-a-doenc.ghtml" target="_blank">Saiba mais</a>
-        </article>
-        <article>
-            <h2>Dicas para abandonar as apostas</h2>
-            <ul>
-                <li>Busque apoio de amigos e familiares</li>
-                <li>Registre seu progresso diariamente (use o diário do app!)</li>
-                <li>Evite situações de risco e crie novos hábitos</li>
-                <li>Procure ajuda profissional quando necessário</li>
-            </ul>
-            <a href="https://portal.sbpcnet.org.br/noticias/saude-mental-na-era-digital/" target="_blank">Leia sobre saúde mental</a>
-        </article>
-        <article>
-            <h2>Links Úteis</h2>
-            <ul>
-                <li><a href="https://www.jogadoresanonimos.org.br/" target="_blank">Jogadores Anônimos Brasil</a></li>
-                <li><a href="https://cvv.org.br/" target="_blank">CVV – Apoio emocional</a></li>
-                <li><a href="https://www.youtube.com/@jogadoresanonimosbrasil" target="_blank">JA no YouTube</a></li>
-            </ul>
-        </article>
-        <article>
-            <h2>Depoimentos e Inspiração</h2>
-            <p>“Eu achava que não conseguiria, mas o primeiro passo mudou tudo.”<br>
-            “O aplicativo me ajudou a perceber meus gatilhos.”</p>
-        </article>
+        <div class="container">
+            <div class="content-grid">
+                <!-- Left Column -->
+                <div class="content-column">
+                    <!-- About Section -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon icon-amber">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m15 14 5-5-5-5"/>
+                                    <path d="M20 9H9.5A5.5 5.5 0 0 0 4 14.5v0A5.5 5.5 0 0 0 9.5 20H13"/>
+                                </svg>
+                            </div>
+                            <h2 class="card-title">O que é o vício em apostas?</h2>
+                        </div>
+                        <p class="card-text">
+                            O vício em apostas é um transtorno sério, reconhecido pela OMS, que afeta milhões de pessoas no Brasil. Reconhecer o problema é o primeiro passo para a mudança.
+                        </p>
+                        <a href="https://g1.globo.com/saude/saude-mental/noticia/2024/07/16/ludopatia-entenda-o-que-e-a-doenc.ghtml" target="_blank" class="card-link">
+                            Saiba mais
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                <polyline points="15,3 21,3 21,9"/>
+                                <line x1="10" y1="14" x2="21" y2="3"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Tips Section -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon icon-emerald">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+                                </svg>
+                            </div>
+                            <h2 class="card-title">Dicas para abandonar as apostas</h2>
+                        </div>
+                        <ul class="tips-list">
+                            <li>
+                                <div class="tip-bullet"></div>
+                                <span>Busque apoio de amigos e familiares</span>
+                            </li>
+                            <li>
+                                <div class="tip-bullet"></div>
+                                <span>Registre seu progresso diariamente (use o diário do app!)</span>
+                            </li>
+                            <li>
+                                <div class="tip-bullet"></div>
+                                <span>Evite situações de risco e crie novos hábitos</span>
+                            </li>
+                            <li>
+                                <div class="tip-bullet"></div>
+                                <span>Procure ajuda profissional quando necessário</span>
+                            </li>
+                        </ul>
+                        <a href="https://portal.sbpcnet.org.br/noticias/saude-mental-na-era-digital/" target="_blank" class="card-link">
+                            Leia sobre saúde mental
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                <polyline points="15,3 21,3 21,9"/>
+                                <line x1="10" y1="14" x2="21" y2="3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="content-column">
+                    <!-- Useful Links -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon icon-blue">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="m19 8 2 2-2 2"/>
+                                    <path d="m17 12h4"/>
+                                </svg>
+                            </div>
+                            <h2 class="card-title">Links Úteis</h2>
+                        </div>
+                        <div class="links-grid">
+                            <a href="https://www.jogadoresanonimos.org.br/" target="_blank" class="link-item">
+                                <div class="link-icon icon-users">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                        <circle cx="9" cy="7" r="4"/>
+                                        <path d="m19 8 2 2-2 2"/>
+                                        <path d="m17 12h4"/>
+                                    </svg>
+                                </div>
+                                <div class="link-content">
+                                    <div class="link-title">Jogadores Anônimos Brasil</div>
+                                    <div class="link-description">Grupo de apoio mútuo</div>
+                                </div>
+                                <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                    <polyline points="15,3 21,3 21,9"/>
+                                    <line x1="10" y1="14" x2="21" y2="3"/>
+                                </svg>
+                            </a>
+
+                            <a href="https://cvv.org.br/" target="_blank" class="link-item">
+                                <div class="link-icon icon-heart">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/>
+                                    </svg>
+                                </div>
+                                <div class="link-content">
+                                    <div class="link-title">CVV – Apoio emocional</div>
+                                    <div class="link-description">Suporte 24h gratuito</div>
+                                </div>
+                                <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                    <polyline points="15,3 21,3 21,9"/>
+                                    <line x1="10" y1="14" x2="21" y2="3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Testimonials -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon icon-yellow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                            </div>
+                            <h2 class="card-title">Depoimentos</h2>
+                        </div>
+                        <div class="testimonials">
+                            <blockquote class="testimonial">
+                                <p class="testimonial-text">
+                                    "Eu achava que não conseguiria, mas o primeiro passo mudou tudo."
+                                </p>
+                            </blockquote>
+                            <blockquote class="testimonial">
+                                <p class="testimonial-text">
+                                    "O aplicativo me ajudou a perceber meus gatilhos."
+                                </p>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
+
+    <!-- Footer -->
     <footer>
-        <small>Aposta Zero &copy; 2025 | Conteúdo educativo e apoio. Não substitui acompanhamento profissional.</small>
+        <div class="container">
+            <p class="footer-text">
+                Aposta Zero &copy; 2025 | Conteúdo educativo e apoio. Não substitui acompanhamento profissional.
+            </p>
+        </div>
     </footer>
 </body>
 </html>
